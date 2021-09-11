@@ -32,4 +32,8 @@ build/
 ### VS Code ###
 .vscode/
 
+### ENV ###
 src/main/resources/application.properties
+
+### Firebase Connection ###
+src/main/java/com/brevo/app/backendcs2/firebase
