@@ -1,1 +1,3 @@
-# backend-cs2
+Docente: Alexander Giraldo Higuita
+
+Estudiantes: Brayan Stiven Marin Duque & Sebastian Henao Loaiza
