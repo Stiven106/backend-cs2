@@ -13,7 +13,6 @@ public class UserDTO implements Serializable {
     private String encryptedPassword;
 
 
-
     public long getId() {
         return id;
     }
