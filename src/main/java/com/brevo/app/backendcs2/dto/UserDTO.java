@@ -1,4 +1,4 @@
-package com.brevo.dto;
+package com.brevo.app.backendcs2.dto;
 
 import java.io.Serializable;
 
