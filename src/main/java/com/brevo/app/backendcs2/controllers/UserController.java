@@ -1,7 +1,12 @@
 package com.brevo.app.backendcs2.controllers;
 
+import com.brevo.app.backendcs2.dto.UserDTO;
 import com.brevo.app.backendcs2.models.request.UserDetailRequestModel;
+import com.brevo.app.backendcs2.models.response.UserRest;
+import com.brevo.app.backendcs2.services.UserServiceInterface;
 
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,19 +19,37 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users") // http://localhost:8080/users
 public class UserController     {
 
-    @GetMapping
+    @Autowired
+    UserServiceInterface userService;
+
+    
+
+    @GetMapping //estamos obteniendo los usuarios
     public String getUser() {
-        return "Obteniendo usuario";
+        return "Obtener usuarios";
     }
 
-    @DeleteMapping
-    public String deleteUser() {
-        return "Borrando usuario";
-    }
+    //Aqui estamos creando un usuario.
 
     @PostMapping
-    public String createUser(@RequestBody UserDetailRequestModel userDetails) {
-        return "Creando usuario";
+    public UserRest createrUser(@RequestBody UserDetailRequestModel userDetails){  
+           
+            UserRest userToReturn = new UserRest();
+
+            UserDTO userDTO = new UserDTO();
+
+            extracted(userDetails, userDTO);
+
+            UserDTO createrUser = userService.createUser(userDTO);
+
+            BeanUtils.copyProperties(createrUser, userToReturn);
+
+            //return "Creando usuarios";
+        return userToReturn;
+    }
+
+    private void extracted(UserDetailRequestModel userDetails, UserDTO userDTO) {
+        BeanUtils.copyProperties(userDetails, userDTO);
     }
 
 }

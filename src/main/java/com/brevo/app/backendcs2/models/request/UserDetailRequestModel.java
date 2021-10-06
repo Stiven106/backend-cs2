@@ -1,36 +1,42 @@
 package com.brevo.app.backendcs2.models.request;
 
 public class UserDetailRequestModel {
-
-    private String FirstName;
-    private String LastName;
-    private String Email;
-    private String Password;
-
+    
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
+
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
-    public String getLastName() {
-        return LastName;
+
+    public String getlastName() {
+        return lastName;
     }
-    public void setLastName(String lastName) {
-        LastName = lastName;
+
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
+
     public String getEmail() {
-        return Email;
+        return email;
     }
+
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
+
     public String getPassword() {
-        return Password;
+        return password;
     }
+
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
 }

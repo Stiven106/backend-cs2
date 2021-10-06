@@ -1,12 +1,12 @@
-package com.brevo.app.backendcs2.dto;
+package com.brevo.app.backendcs2.shared.dto;
 
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {
 
     private static final Long serialVersionUID = 1L;
-    
-    private long id;
+
+    private Long id;
     private String userId;
     private String firstName;
     private String lastName;
@@ -14,7 +14,11 @@ public class UserDTO implements Serializable {
     private String password;
     private String encryptedPassword;
 
-
+    public Object userToReturn;
+    
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
     public long getId() {
         return id;
     }
@@ -59,5 +63,4 @@ public class UserDTO implements Serializable {
     }
 
     
-
 }
