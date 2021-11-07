@@ -1,7 +1,6 @@
 package com.brevo.app.backendcs2.models.response;
 
 public class UserRest {
-
     private String userId;
     private String firstName;
     private String lastName;

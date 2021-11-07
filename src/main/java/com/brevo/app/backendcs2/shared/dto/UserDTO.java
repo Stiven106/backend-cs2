@@ -14,15 +14,13 @@ public class UserDTO implements Serializable {
     private String password;
     private String encryptedPassword;
 
-    public Object userToReturn;
-    
-    public static long getSerialversionuid() {
+    public static Long getSerialversionuid() {
         return serialVersionUID;
     }
-    public long getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getUserId() {
@@ -37,10 +35,10 @@ public class UserDTO implements Serializable {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public String getLastName() {
+    public String getlastName() {
         return lastName;
     }
-    public void setLastName(String lastName) {
+    public void setlastName(String lastName) {
         this.lastName = lastName;
     }
     public String getEmail() {
@@ -61,6 +59,4 @@ public class UserDTO implements Serializable {
     public void setEncryptedPassword(String encryptedPassword) {
         this.encryptedPassword = encryptedPassword;
     }
-
-    
 }

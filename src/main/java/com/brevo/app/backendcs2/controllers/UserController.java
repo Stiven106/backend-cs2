@@ -7,7 +7,6 @@ import com.brevo.app.backendcs2.services.UserServiceInterface;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,29 +21,20 @@ public class UserController     {
     @Autowired
     UserServiceInterface userService;
 
-    
-
     @GetMapping //estamos obteniendo los usuarios
     public String getUser() {
         return "Obtener usuarios";
     }
 
     //Aqui estamos creando un usuario.
-
     @PostMapping
     public UserRest createrUser(@RequestBody UserDetailRequestModel userDetails){  
-           
             UserRest userToReturn = new UserRest();
-
             UserDTO userDTO = new UserDTO();
-
             extracted(userDetails, userDTO);
-
             UserDTO createrUser = userService.createUser(userDTO);
-
             BeanUtils.copyProperties(createrUser, userToReturn);
 
-            //return "Creando usuarios";
         return userToReturn;
     }
 
